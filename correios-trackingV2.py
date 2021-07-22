@@ -6,6 +6,7 @@
 
 import requests
 
+#Esta função retorna o JSON obtido por GET da API
 def consultar(cod):
     #Método GET utilizado para obter o JSON da API REST
     response = requests.get('https://api.linketrack.com/track/json?user=teste&token=1abcd00b2731640e886fb41a8a9671ad1434c599dbaa0a0de9a5aa619f29a83f&codigo=' + str(cod))
@@ -23,6 +24,7 @@ cod = str(input('Informe o código de rastreamento do objeto: '))
 json = consultar(cod)
 
 #Loop for utilizado para separar os itens do dicionário
+#Ao longo do loop, a variável resultado recebe as strings devidamente formatadas para o print
 resultado = ''
 for evento in json['eventos']:
     resultado += '\n' + '-'*50 + '\n'
@@ -33,9 +35,12 @@ for evento in json['eventos']:
         resultado += '\n' + subStatus
 print(resultado)
 
+#Loop indefinido para perguntar se deve salvar o resultado.
+#É interrompido quando escolhe-se 's' ou 'n' como resposta.
 while True:
     salvar_txt = input('\nDeseja salvar o resultado? (s/n) ')
     if salvar_txt.casefold() == 's':
+        #Cria o arquivo results.txt e escreve o resultado
         f = open('results.txt','w')
         f.write('Resultado da consulta:\n' + resultado)
         f.close()
