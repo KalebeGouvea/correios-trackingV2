@@ -5,7 +5,7 @@
 </p>
 
 ### Descrição do projeto
-<p align="justify"> Programa desenvolvido em Python que obtem dados de uma API REST e que tem como objetivo fornecer o histórico de rastreamento de uma encomenda dos Correios ao ser informado o código de rastreamento do produto.</p>
+<p align="justify"> Programa desenvolvido em Python que obtém dados de uma API REST e que tem como objetivo fornecer o histórico de rastreamento de uma encomenda dos Correios ao ser informado o código de rastreamento do produto.</p>
 
 > Status do projeto: Concluido :heavy_check_mark:
 
